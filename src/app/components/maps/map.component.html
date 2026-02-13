@@ -1,0 +1,285 @@
+<y-map
+  [props]="{
+          location: {
+            center: center(),
+            zoom: zoom(),
+          },
+          mode: mapMode(), 
+          theme: theme(),
+          zoomRange:zoomRange(),
+          restrictMapArea: bounds(),
+          margin: [50, 50, 50, 50]
+        }"
+  (ready)="onMapReady($event)"
+>
+  <!-- <y-map-satellite [props]="{ zIndex: 1000 }"></y-map-satellite>
+  <y-map-default-scheme-layer [props]="schemeProps"></y-map-default-scheme-layer> -->
+
+  <!-- <y-map-default-scheme-layer></y-map-default-scheme-layer> -->
+
+  <y-map-default-scheme-layer *ngIf="basemap() === 'scheme'"></y-map-default-scheme-layer>
+
+  <!-- ГИБРИД (СПУТНИК + СХЕМА) -->
+  <ng-container *ngIf="basemap() === 'hybrid'">
+    <!-- спутник всегда ниже схемы -->
+    <y-map-satellite [props]="{ zIndex: 0 }"></y-map-satellite>
+    <y-map-default-scheme-layer [props]="schemeProps"></y-map-default-scheme-layer>
+  </ng-container>
+  <y-map-default-features-layer [props]="{ zIndex: 2021 }" />
+  <y-map-feature-data-source [props]="{ id: 'parcels' }" />
+  <y-map-feature-data-source [props]="{ id: 'other' }" />
+  <y-map-feature-data-source [props]="{ id: 'marker' }" />
+  <y-map-feature-data-source [props]="{ id: 'boundaries' }" />
+  <y-map-feature-data-source [props]="{ id: 'obj' }" />
+
+  <y-map-layer [props]="{ source: 'parcels', type: 'features', zIndex: 2010 }"></y-map-layer>
+  <y-map-layer [props]="{ source: 'other', type: 'features', zIndex: 2010 }"></y-map-layer>
+  <y-map-layer [props]="{ source: 'boundaries', type: 'features', zIndex: 2010 }"></y-map-layer>
+  <y-map-layer [props]="{ source: 'marker', type: 'markers', zIndex: 2020 }"></y-map-layer>
+  <y-map-layer [props]="{ source: 'obj', type: 'markers', zIndex: 2019 }"></y-map-layer>
+
+  <y-map-controls [props]="controlsProps$ | async">
+    <y-map-control
+      *ngIf="currentZoom <= 17"
+      class="no-bg-control"
+      data-control="legend"
+      [ngStyle]="{
+      '--legend-text-color': basemap() === 'scheme' ? '#000' : '#fff'
+    }"
+    >
+      <div class="map-legend">
+        <div
+          class="map-legend__item"
+          *ngFor="let it of legend"
+        >
+          <div class="map-legend__num">
+            <span
+              *ngIf="it.swatch"
+              class="map-legend__swatch"
+              [style.background]="it.swatch"
+            ></span>
+            <svg
+              *ngIf="!it.swatch && it.icon === 'arrow'"
+              class="map-legend__arrow"
+              viewBox="0 0 40 58"
+              aria-hidden="true"
+            >
+              <path
+                d="M20 58 L4 14 L36 14 Z"
+                fill="#E73527"
+                stroke="#E73527"
+              />
+            </svg>
+
+            <span *ngIf="!it.swatch && !it.icon">{{ it.num }}</span>
+          </div>
+
+          <div
+            class="map-legend__text"
+            [style.color]="basemap() === 'scheme' ? '#000' : '#fff'"
+          >{{ it.text }}</div>
+        </div>
+      </div>
+    </y-map-control>
+
+  </y-map-controls>
+
+  <y-map-controls [props]="{ position: 'top right horizontal' }">
+    <y-map-control class="map-segmented-control">
+      <div
+        class="segmented"
+        role="tablist"
+        aria-label="Режим карты"
+      >
+        <button
+          type="button"
+          class="segmented__btn"
+          [class.is-active]="basemap() === 'scheme'"
+          (click)="setBasemap('scheme')"
+          role="tab"
+          aria-selected="{{ basemap() === 'scheme' }}"
+        >
+          Схема
+        </button>
+        <button
+          type="button"
+          class="segmented__btn"
+          [class.is-active]="basemap() === 'hybrid'"
+          (click)="setBasemap('hybrid')"
+          role="tab"
+          aria-selected="{{ basemap() === 'hybrid' }}"
+        >
+          Гибрид
+        </button>
+      </div>
+    </y-map-control>
+  </y-map-controls>
+
+  <ng-container *ngFor="let f of parcelsFeatures; trackBy: trackByIdFeature">
+    <y-map-feature [props]="{
+      source: 'parcels',
+      id: f.id,
+      geometry: f.geometry,
+      properties: f.properties,
+      style: f.style
+    }"></y-map-feature>
+  </ng-container>
+
+
+  <ng-container *ngFor="let f of otherFeatures; trackBy: trackById">
+    <y-map-feature [props]="{
+    source: 'other',
+    id: f.id,
+    geometry: f.geometry,
+    properties: f.properties,
+    style: f.style
+  }"></y-map-feature>
+  </ng-container>
+
+
+  <ng-container *ngFor="let f of boundariesFeatures; trackBy: trackById">
+    <y-map-feature [props]="{
+    source: 'boundaries',
+    disableRoundCoordinates:true,
+    id: f.id,
+    geometry: f.geometry,
+    properties: f.properties,
+    style: f.style
+  }"></y-map-feature>
+  </ng-container>
+
+
+  <ng-container *ngIf="currentZoom >= labelMinZoom">
+    <ng-container *ngFor="let m of parcelLabels; trackBy: trackById">
+      <y-map-marker [props]="{ source: 'marker', id: m.id, coordinates: m.coords, properties: m }">
+        <div
+          class="parcel-label"
+          [style.--fs.px]="(currentZoom | zoomToFs:labelMinZoom:20:10:22)"
+        >
+          <div class="parcel-label__name">{{ m.name }}</div>
+
+          <ng-container *ngIf="m.isLabel; else areaTpl">
+            <div
+              *ngIf="currentZoom >= 19"
+              class="parcel-badge"
+              [class.parcel-badge--sold]="m.labelKind === 'sold'"
+              [class.parcel-badge--reserved]="m.labelKind === 'reserved'"
+            >
+              {{ m.statusLabel }}
+            </div>
+          </ng-container>
+
+          <ng-template #areaTpl>
+            <div
+              class="parcel-label__area"
+              *ngIf="m.area as a"
+            >
+              {{ a }} м²
+            </div>
+          </ng-template>
+        </div>
+      </y-map-marker>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="currentZoom >= labelMinZoom">
+    <ng-container *ngFor="let m of pontFeatures; trackBy: trackById">
+      <y-map-marker [props]="{ source: 'marker', coordinates: m.geometry.coordinates }">
+
+        <div
+          class="marker-label__name"
+          [style.--fsm.px]="currentZoom | zoomToFs: labelMinZoom :20:10:22"
+        >
+          {{ m.properties.name }}
+        </div>
+
+      </y-map-marker>
+    </ng-container>
+  </ng-container>
+
+
+  <y-map-marker
+    *ngIf="currentZoom >= labelMinZoom"
+    [props]="{ source: 'marker', coordinates: [36.541929,55.192489] }"
+  >
+    <div class="arrow-pin">
+      <svg
+        width="40"
+        height="58"
+        viewBox="0 0 40 58"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d="M20 58 L4 14 L36 14 Z"
+          fill="#E73527"
+          stroke="#E73527"
+          stroke-width="1"
+          stroke-linejoin="round"
+          vector-effect="non-scaling-stroke"
+        />
+      </svg>
+    </div>
+  </y-map-marker>
+
+
+
+  <y-map-listener [props]="{
+    onFastClick: onClickMap,
+    
+  }" />
+
+
+  <y-map-marker
+    *ngIf="popup"
+    [props]="{ coordinates: popup.coords, zIndex: 10000 }"
+  >
+    <div
+      class="popup"
+      (click)="$event.stopPropagation()"
+    >
+      <button
+        class="popup__close"
+        (click)="closePopup()"
+      >×</button>
+
+      <div class="popup__title">Земельный участок {{ popup.data?.name }}</div>
+
+      <div
+        class="popup__row"
+        *ngIf="popup.data?.area"
+      >Площадь: {{ popup.data.area }} м²</div>
+
+      <div
+        class="popup__row"
+        *ngIf="popup.data?.label"
+      > Статус: {{ popup.data.label }}</div>
+      <div
+        class="popup__row"
+        *ngIf="popup.data?.label"
+      >Кадастровый номер: {{ popup.data.label }}</div>
+
+      <div
+        class="popup__row"
+        *ngIf="popup.data?.price != null"
+      >
+        Cтоимость: {{ popup.data.price | number:'1.0-0' }} ₽
+      </div>
+
+
+      <a
+        *ngIf="popup.data?.urlButton as url"
+        class="popup__btn"
+        [href]="url"
+        target="_blank"
+        rel="noopener"
+      >
+        {{ popup.data?.labelButton }}
+      </a>
+
+    </div>
+  </y-map-marker>
+
+  <y-map-mouse></y-map-mouse>
+
+</y-map>

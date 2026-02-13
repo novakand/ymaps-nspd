@@ -1,0 +1,84 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "id": 816897763,
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            4068771.1836595535,
+                            7399557.192374426
+                        ],
+                        [
+                            4068799.640128694,
+                            7399505.513354213
+                        ],
+                        [
+                            4068863.2172030644,
+                            7399539.891859351
+                        ],
+                        [
+                            4068850.401423065,
+                            7399579.803983862
+                        ],
+                        [
+                            4068775.6683924114,
+                            7399565.848122693
+                        ],
+                        [
+                            4068771.1836595535,
+                            7399557.192374426
+                        ]
+                    ]
+                ],
+                "crs": {
+                    "type": "name",
+                    "properties": {
+                        "name": "EPSG:3857"
+                    }
+                }
+            },
+            "properties": {
+                "cadastralDistrictsCode": 40,
+                "category": 36368,
+                "categoryName": "Земельные участки ЕГРН",
+                "descr": "40:03:011005:708",
+                "externalKey": "40:03:011005:708",
+                "interactionId": 798910580,
+                "label": "40:03:011005:708",
+                "options": {
+                    "area": null,
+                    "cad_num": "40:03:011005:708",
+                    "cost_application_date": "2025-04-18",
+                    "cost_approvement_date": "",
+                    "cost_determination_date": "2022-01-01",
+                    "cost_index": 419.57,
+                    "cost_registration_date": "2025-04-29",
+                    "cost_value": 568510.88,
+                    "declared_area": null,
+                    "determination_couse": "Акт бюджетного учреждения, созданного субъектом Российской Федерации, об определении кадастровой стоимости в соответствии со статьей 16 Закона 237-ФЗ",
+                    "land_record_category_type": "Земли населенных пунктов",
+                    "land_record_reg_date": "2025-04-18",
+                    "land_record_subtype": "Землепользование",
+                    "land_record_type": "Земельный участок",
+                    "ownership_type": "Частная",
+                    "permitted_use_established_by_document": "Для индивидуального жилищного строительства",
+                    "quarter_cad_number": "40:03:011005",
+                    "readable_address": "Российская Федерация, Калужская область, Боровский р-н, д Николаевка",
+                    "specified_area": 1355,
+                    "status": "Учтенный"
+                },
+                "subcategory": 5,
+                "systemInfo": {
+                    "inserted": "2025-04-18T07:31:02.184918",
+                    "insertedBy": "7EF5CD0B-AC08-4097-AF2B-07CD85992A79",
+                    "updated": "2025-04-29T09:40:01.149826",
+                    "updatedBy": "064EDE2E-1DAA-4758-B509-34BC38C4AA5D"
+                }
+            }
+        }
+    ]
+}

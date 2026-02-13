@@ -1,0 +1,98 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": 434916212,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              35.586497490736676,
+              55.670820389843584
+            ],
+            [
+              35.586791302124986,
+              55.67050173741332
+            ],
+            [
+              35.587148351399826,
+              55.67060086558156
+            ],
+            [
+              35.58685358813896,
+              55.67091934002623
+            ],
+            [
+              35.586497490736676,
+              55.670820389843584
+            ]
+          ]
+        ],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "EPSG:3857"
+          }
+        }
+      },
+      "properties": {
+        "cadastralDistrictsCode": 50,
+        "category": 36368,
+        "categoryName": "Земельные участки ЕГРН",
+        "descr": "50:18:0050406:336",
+        "externalKey": "50:18:0050406:336",
+        "interactionId": 417390597,
+        "label": "50:18:0050406:336",
+        "options": {
+          "area": null,
+          "cad_num": "50:18:0050406:336",
+          "cost_application_date": "2023-01-01",
+          "cost_approvement_date": "",
+          "cost_determination_date": "2022-01-01",
+          "cost_index": 454.83,
+          "cost_registration_date": "2022-12-30",
+          "cost_value": 454830,
+          "declared_area": null,
+          "determination_couse": "Акт об утверждении результатов определения кадастровой стоимости, полученных в соответствии с положениями Закона 237-ФЗ",
+          "land_record_category_type": "Земли сельскохозяйственного назначения",
+          "land_record_reg_date": "2012-06-28",
+          "land_record_subtype": "Землепользование",
+          "land_record_type": "Земельный участок",
+          "ownership_type": "Частная",
+          "permitted_use_established_by_document": "для дачного строительства",
+          "quarter_cad_number": "50:18:0050406",
+          "readable_address": "Московская область, Можайский район, д.Никольское",
+          "specified_area": 1000,
+          "status": "Учтенный"
+        },
+        "subcategory": 8,
+        "systemInfo": {
+          "inserted": "2024-12-11T05:11:34.059424",
+          "insertedBy": "7EF5CD0B-AC08-4097-AF2B-07CD85992A79",
+          "updated": "2026-02-01T10:39:02.797315",
+          "updatedBy": "7EF5CD0B-AC08-4097-AF2B-07CD85992A79"
+        },
+        "name": "104",
+        "area": 1000,
+        "statusLabel": "Свободно",
+        "center": [
+          35.58682292106825,
+          55.670710538719774
+        ],
+        "strokeColor": "#ffffff",
+        "strokeOpacity": 1,
+        "strokeWeight": 1,
+        "fillColor": "#71975b",
+        "fillOpacity": 1,
+        "selectedFillColor": "#5d9a3c",
+        "isLabel": false,
+        "labelKind": "",
+        "labelButton": "Бронировать",
+        "urlButton": "",
+        "price": null
+      }
+    }
+  ]
+}

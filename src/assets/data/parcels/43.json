@@ -1,0 +1,102 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": 435081174,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              35.601014989150734,
+              55.67427740121152
+            ],
+            [
+              35.60078653050367,
+              55.67399118913418
+            ],
+            [
+              35.60205389968537,
+              55.67367066890247
+            ],
+            [
+              35.60212910468767,
+              55.67367966795603
+            ],
+            [
+              35.60153592139392,
+              55.6741466654114
+            ],
+            [
+              35.601014989150734,
+              55.67427740121152
+            ]
+          ]
+        ],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "EPSG:3857"
+          }
+        }
+      },
+      "properties": {
+        "cadastralDistrictsCode": 50,
+        "category": 36368,
+        "categoryName": "Земельные участки ЕГРН",
+        "descr": "50:18:0050407:237",
+        "externalKey": "50:18:0050407:237",
+        "interactionId": 417555559,
+        "label": "50:18:0050407:237",
+        "options": {
+          "area": null,
+          "cad_num": "50:18:0050407:237",
+          "cost_application_date": "2023-01-01",
+          "cost_approvement_date": "",
+          "cost_determination_date": "2022-01-01",
+          "cost_index": 451.14,
+          "cost_registration_date": "2022-12-26",
+          "cost_value": 1037622,
+          "declared_area": null,
+          "determination_couse": "Акт об утверждении результатов определения кадастровой стоимости, полученных в соответствии с положениями Закона 237-ФЗ\n\n\n\n\n\n",
+          "land_record_category_type": "Земли сельскохозяйственного назначения",
+          "land_record_reg_date": "2012-06-28",
+          "land_record_subtype": "Землепользование",
+          "land_record_type": "Земельный участок",
+          "ownership_type": "Частная",
+          "permitted_use_established_by_document": "для дачного строительства",
+          "quarter_cad_number": "50:18:0050407",
+          "readable_address": "Московская область, Можайский район, д. Желомеено",
+          "specified_area": 2300,
+          "status": "Учтенный"
+        },
+        "subcategory": 8,
+        "systemInfo": {
+          "inserted": "2024-12-11T07:09:58.72571",
+          "insertedBy": "7EF5CD0B-AC08-4097-AF2B-07CD85992A79",
+          "updated": "2026-02-01T10:38:28.922318",
+          "updatedBy": "7EF5CD0B-AC08-4097-AF2B-07CD85992A79"
+        },
+        "name": "43",
+        "area": 2300,
+        "statusLabel": "Свободно",
+        "center": [
+          35.60145781759567,
+          55.67397403505699
+        ],
+        "strokeColor": "#ffffff",
+        "strokeOpacity": 1,
+        "strokeWeight": 1,
+        "fillColor": "#71975b",
+        "fillOpacity": 1,
+        "selectedFillColor": "#5d9a3c",
+        "isLabel": false,
+        "labelKind": "",
+        "labelButton": "Бронировать",
+        "urlButton": "",
+        "price": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": 434913714,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              35.58579703833726,
+              55.67012569168957
+            ],
+            [
+              35.586091483327685,
+              55.66980605236942
+            ],
+            [
+              35.58644677729279,
+              55.669905543324546
+            ],
+            [
+              35.58615376241944,
+              55.67022428411498
+            ],
+            [
+              35.58579703833726,
+              55.67012569168957
+            ]
+          ]
+        ],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "EPSG:3857"
+          }
+        }
+      },
+      "properties": {
+        "cadastralDistrictsCode": 50,
+        "category": 36368,
+        "categoryName": "Земельные участки ЕГРН",
+        "descr": "50:18:0050406:353",
+        "externalKey": "50:18:0050406:353",
+        "interactionId": 417388099,
+        "label": "50:18:0050406:353",
+        "options": {
+          "area": null,
+          "cad_num": "50:18:0050406:353",
+          "cost_application_date": "2023-01-01",
+          "cost_approvement_date": "",
+          "cost_determination_date": "2022-01-01",
+          "cost_index": 454.83,
+          "cost_registration_date": "2022-12-30",
+          "cost_value": 454830,
+          "declared_area": null,
+          "determination_couse": "Акт об утверждении результатов определения кадастровой стоимости, полученных в соответствии с положениями Закона 237-ФЗ",
+          "land_record_category_type": "Земли сельскохозяйственного назначения",
+          "land_record_reg_date": "2012-06-28",
+          "land_record_subtype": "Землепользование",
+          "land_record_type": "Земельный участок",
+          "ownership_type": "Частная",
+          "permitted_use_established_by_document": "для дачного строительства",
+          "quarter_cad_number": "50:18:0050406",
+          "readable_address": "Московская область, Можайский район, участок расположен в центральной части кадастрового квартала 50:18:0050406",
+          "specified_area": 1000,
+          "status": "Учтенный"
+        },
+        "subcategory": 8,
+        "systemInfo": {
+          "inserted": "2024-12-11T05:11:11.98063",
+          "insertedBy": "7EF5CD0B-AC08-4097-AF2B-07CD85992A79",
+          "updated": "2026-02-01T10:38:44.544538",
+          "updatedBy": "7EF5CD0B-AC08-4097-AF2B-07CD85992A79"
+        },
+        "name": "121",
+        "area": 1000,
+        "statusLabel": "Свободно",
+        "center": [
+          35.58612190781503,
+          55.6700151682422
+        ],
+        "strokeColor": "#ffffff",
+        "strokeOpacity": 1,
+        "strokeWeight": 1,
+        "fillColor": "#71975b",
+        "fillOpacity": 1,
+        "selectedFillColor": "#5d9a3c",
+        "isLabel": false,
+        "labelKind": "",
+        "labelButton": "Бронировать",
+        "urlButton": "",
+        "price": null
+      }
+    }
+  ]
+}

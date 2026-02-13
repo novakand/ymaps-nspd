@@ -1,0 +1,97 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": 816897819,
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              36.55072936,
+              55.19270828
+            ],
+            [
+              36.55096793,
+              55.19282764
+            ],
+            [
+              36.55099263,
+              55.1928471
+            ],
+            [
+              36.55100002,
+              55.19287102
+            ],
+            [
+              36.5509884,
+              55.1928943
+            ],
+            [
+              36.55081987,
+              55.19306906
+            ],
+            [
+              36.55048762,
+              55.19296426
+            ],
+            [
+              36.55072936,
+              55.19270828
+            ]
+          ]
+        ],
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "EPSG:4326"
+          }
+        }
+      },
+      "properties": {
+        "cadastralDistrictsCode": 40,
+        "category": 36368,
+        "categoryName": "Земельные участки ЕГРН",
+        "descr": "40:03:011005:710",
+        "externalKey": "40:03:011005:710",
+        "interactionId": 798910636,
+        "label": "40:03:011005:710",
+        "options": {
+          "area": null,
+          "cad_num": "40:03:011005:710",
+          "cost_application_date": "2025-04-18",
+          "cost_approvement_date": "",
+          "cost_determination_date": "2022-01-01",
+          "cost_index": 419.57,
+          "cost_registration_date": "2025-04-29",
+          "cost_value": 300828.26,
+          "declared_area": null,
+          "determination_couse": "Акт бюджетного учреждения, созданного субъектом Российской Федерации, об определении кадастровой стоимости в соответствии со статьей 16 Закона 237-ФЗ",
+          "land_record_category_type": "Земли населенных пунктов",
+          "land_record_reg_date": "2025-04-18",
+          "land_record_subtype": "Землепользование",
+          "land_record_type": "Земельный участок",
+          "ownership_type": "Частная",
+          "permitted_use_established_by_document": "Для индивидуального жилищного строительства",
+          "quarter_cad_number": "40:03:011005",
+          "readable_address": "Российская Федерация, Калужская область, Боровский р-н, д Николаевка",
+          "specified_area": 717,
+          "status": "Учтенный"
+        },
+        "subcategory": 5,
+        "systemInfo": {
+          "inserted": "2025-04-18T07:31:03.247865",
+          "insertedBy": "7EF5CD0B-AC08-4097-AF2B-07CD85992A79",
+          "updated": "2025-04-29T09:40:01.182243",
+          "updatedBy": "064EDE2E-1DAA-4758-B509-34BC38C4AA5D"
+        },
+        "name": "122",
+        "area": 717,
+        "status": "free",
+        "statusLabel": "свободно",
+        "statusColor": "#2ECC71"
+      }
+    }
+  ]
+}

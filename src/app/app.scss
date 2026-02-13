@@ -1,0 +1,13 @@
+html, body, app-root { height: 100%; margin: 0; }
+
+/* обёртка карты: безопасные единицы, без 100vh */
+.map-wrap { height: 100svh; }           /* Safari/Chrome моб. */
+@supports (height: 100dvh) {
+  .map-wrap { height: 100dvh; }         /* где поддерживается — предпочтительно */
+}
+
+/* сам компонент карты занимает всю обёртку */
+y-map { display:block; width:100%; height:100%; }
+
+/* опционально, чтобы не было прокрутки страницы под картой */
+body { overflow: hidden; }
