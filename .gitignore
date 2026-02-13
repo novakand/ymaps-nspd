@@ -1,0 +1,19 @@
+# Angular
+dist/
+.angular/
+out-tsc/
+
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log

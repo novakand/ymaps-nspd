@@ -2,7 +2,7 @@ name: Deploy ymaps-nspd to GH Pages
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
